@@ -5,12 +5,10 @@ import LinkGenerator from '../../Pages/Links';
 
 const App = () => {
     return (
-        <div>
             <Layout>
-                <Email />
+                <Email/>
                 {/* <LinkGenerator /> */}
             </Layout>
-        </div>
     );
 };
 

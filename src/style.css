@@ -11,3 +11,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.svg-viewer > svg,
+.svg-viewer > path {
+  z-index: 10;
+  fill-opacity: 0.4;
+  transition: all 0.3s;
+}
+
+.svg-viewer:hover > svg,
+.svg-viewer:hover > path {
+  fill-opacity: 1;
+  transition: all 0.3s;
+}

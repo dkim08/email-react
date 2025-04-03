@@ -1,5 +1,9 @@
 import { useState } from "react";
+// import AddSvg from './assets/add.svg'
+import SvgViewer from "../../SvgViewer";
 import './style.css'
+
+
 
 const Email = () => {
     const [email, setEmail] = useState("");
@@ -9,12 +13,13 @@ const Email = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         if (email.includes("@") && email.includes(".")) {
-            setEmailList([...emailList, email]);
-            setMessage("Email добавлен в список!");
-            setEmail("");
-        } else {
             setMessage("Некорректный email");
-        }
+           
+        }  
+        
+        setEmailList([...emailList, email]);
+        setMessage("Email добавлен в список!");
+        setEmail("");
     };
 
     return (
@@ -22,21 +27,22 @@ const Email = () => {
            <div className="user-container">
                 <p>Добавить пользователя</p>
                 <a className="link">Скопировать</a>
+                <SvgViewer id={'iconRemove'} />
            </div>
-            <form className="add-email" onSubmit={handleSubmit}>
+            <div className="add-email" onSubmit={handleSubmit}>
                 <input 
                     type="text" 
                     placeholder="Invite others by name or by email"
                     value={email} 
                     onChange={(e) => setEmail(e.target.value)} 
                 />
-                    <button type="submit">Пригласить</button>
-            </form>
+                    <SvgViewer id={'iconAdd'} />
+                    <button type="submit" onClick={handleSubmit}>Пригласить</button>
+            </div>
             <p>{message}</p>
-            <h2>Список email:</h2>
             <ul>
                 {emailList.map((item, index) => (
-                    <li key={index}>{item}</li>
+                    <div key={index}>{item}</div>
                 ))}
             </ul>
         </div>

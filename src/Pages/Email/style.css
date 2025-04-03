@@ -1,3 +1,7 @@
+body {
+ background-color: #1E1E1E;
+}
+
 .email-container { 
   width: 654px;
   height: 502px;
@@ -6,40 +10,44 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  background-color: #5C5C5C;
+  background-color: rgba(92, 92, 92, 0.6);
+  margin: 0 auto;
+  border-radius: 15px;
 }
 
 .user-container {
   display: flex;
   align-items: center;
   gap: 295px;
+  margin-top: -40%;
 }
 
 .link {
   color: #52BB4D;
 }
 
+.add-email {
+  position: relative;
+  display: inline-block; 
+}
+
 .add-email input{
-  background-color: #000000;
-  opacity: 30%;
-  padding: 13px 200px 13px 27px;
+  background-color: hsla(0, 0%, 0%, 0.3);
+  padding: 13px 400px 13px 27px;
   border-radius: 20px;
   border: none;
-  margin-right: 30px;
+  margin-right: -10px;
 }
 
 .add-email button {
+  position: absolute;
+  right: -5px;
+  top: 7%;
   padding: 9px 15px 9px 27px;
-  opacity: 10%;
   border-radius: 20px;
   border: none;
   color: white;
   margin-left: 30px;
-}
-
-.add-email {
-  background-color: #000000;
-  opacity: 30%;
-  width: 575px;
-  border-radius: 20px;
+  background-color: rgba(2, 2, 2, 0.1);
+  cursor: pointer;
 }

@@ -3,7 +3,7 @@ import './style.css';
 
 const Layout = ( {children} ) => {
     return (
-        <div>
+        <div className='layout'>
             <Header />
             <div>
                 {children}
