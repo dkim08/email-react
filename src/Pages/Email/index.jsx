@@ -24,10 +24,11 @@ const Email = () => {
 
     return (
         <div className="email-container">
-           <div className="user-container">
-                <p>Добавить пользователя</p>
+          <div className="email-container-header">
+             <div className="user-container">
+                <span>Добавить пользователя</span>
                 <a className="link">Скопировать</a>
-                <SvgViewer id={'iconRemove'} />
+                {/* <SvgViewer id={'iconRemove'} /> */}
            </div>
             <div className="add-email" onSubmit={handleSubmit}>
                 <input 
@@ -36,15 +37,18 @@ const Email = () => {
                     value={email} 
                     onChange={(e) => setEmail(e.target.value)} 
                 />
-                    <SvgViewer id={'iconAdd'} />
-                    <button type="submit" onClick={handleSubmit}>Пригласить</button>
+                    {/* <SvgViewer id={'iconAdd'} /> */}
+                <button type="submit" onClick={handleSubmit}>Пригласить</button>
             </div>
-            <p>{message}</p>
-            <ul>
-                {emailList.map((item, index) => (
-                    <div key={index}>{item}</div>
-                ))}
-            </ul>
+          </div>
+            <div className="user-list-container">
+                <span>{message}</span>
+                <ul>
+                    {emailList.map((item, index) => (
+                        <li key={index}>{item}</li>
+                    ))}
+                </ul>
+            </div>
         </div>
     );
 };
