@@ -32,7 +32,8 @@ const Email = () => {
             <div className="email-container-header">
                 <div className="user-container">
                     <span>Добавить пользователя</span>
-                    <a className="link">Скопировать</a>
+                
+                <a className="link"><SvgViewer id={'iconLink'}/>Скопировать</a>
                 </div>
                 <form className="add-email" onSubmit={handleSubmit}>
                     <input 
@@ -41,7 +42,8 @@ const Email = () => {
                         value={email} 
                         onChange={(e) => setEmail(e.target.value)} 
                     />
-                    <button type="submit">Пригласить</button>
+                        
+                        <button className="btn" type="submit" onSubmit={handleSubmit}><SvgViewer id={'iconPerson'}/>Пригласить</button>
                 </form>
             </div>
             <div className="user-list-container">
@@ -50,6 +52,8 @@ const Email = () => {
                     {emailList.map((item, index) => (
                         <li key={index} className="email-item">
                             <span>{item.email}</span>
+                            <SvgViewer className='iconBasket' id={'iconBasket'}/>
+                            <SvgViewer className='iconRename' id={'iconRename'}/>
                             <label className="toggle-switch">
                                 <input 
                                     type="checkbox" 

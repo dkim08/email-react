@@ -1,88 +1,109 @@
 body {
-  background: linear-gradient(to top, #1E1E1E,#2D2D2D );
- }
- 
- .email-container {
-   position: relative;
-   max-width: 654px;
-   max-height: 502px;
-   margin: 0 auto;
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   justify-content: center;
-   background-color: rgba(92, 92, 92, 0.6);
-   box-sizing: border-box;
-   border-radius: 20px;
- }
- 
- /* .email-container  * {
-   border: 1px solid red;
-   padding: 0px 30px;
- }
-  */
- .email-container-header {
-   position: absolute;
-   top: 0px;
-   left: 0;
-   width: 100%;
-   padding-top: 30px;
- }
- 
- .user-container {
-   /* background-color: cadetblue; */
-   display: flex;
-   align-items: center;
-   justify-content: space-between;
-   padding: 0px 19px 0px 30px;
- }
- 
- .add-email {
-   width: 100%;
-   /* background-color: bisque; */
- }
- 
- .user-list-container {
-   min-height: 377px;
-   width: 100%;
-   padding-top: 142px;
-   overflow: auto;
- }
- 
- .add-email {
-   position: relative;
-   display: inline-block; 
-   padding: 16px 20px 16px 20px;
- }
- 
- .add-email input{
-   width: 100%;
-   background-color: hsla(0, 0%, 0%, 0.3);
-   padding: 15px;
-   border-radius: 20px;
-   border: none;
-   margin-right: -10px;
- }
- 
- .add-email button {
-   position: absolute;
-   right: 30px;
-   top: 20px;
-   padding: 9px 15px 9px 27px;
-   border-radius: 20px;
-   border: none;
-   color: white;
-   margin-left: 30px;
-   background-color: rgba(2, 2, 2, 0.1);
-   cursor: pointer;
- } 
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to top, #1E1E1E, #2D2D2D);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
- .toggle-switch {
+.email-container {
+  width: 654px;
+  min-height: 502px;
+  background-color: rgba(92, 92, 92, 0.6);
+  border-radius: 20px;
+  box-sizing: border-box;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.email-container-header {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.user-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.user-container .link {
+  color: #4caf50;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.add-email {
   position: relative;
+  width: 100%;
+}
+
+.add-email input {
+  width: 100%;
+  padding: 16px 20px 16px 20px; 
+  border-radius: 25px;
+  border: none;
+  background-color: hsla(0, 0%, 0%, 0.3);
+  color: white;
+  box-sizing: border-box;
+}
+
+.add-email button {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 9px 15px 9px 40px;
+  border-radius: 20px;
+  border: none;
+  color: white;
+  background-color: rgba(2, 2, 2, 0.1);
+  cursor: pointer;
+}
+
+.user-list-container {
+  margin-top: 30px;
+  flex-grow: 1;
+  overflow: auto;
+  padding-top: 20px;
+}
+
+.user-list-container ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.email-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.email-item svg{
+  position: absolute;
+  margin-left:14% ;
+  margin-top: -10px;
+  width: 20px;
+  height: 20px;
+}
+
+.toggle-switch {
   display: inline-block;
+  position: relative;
   width: 40px;
   height: 20px;
-  margin-left: 10px;
+  right: 128px;
 }
 
 .toggle-switch input {
@@ -94,8 +115,10 @@ body {
 .slider {
   position: absolute;
   cursor: pointer;
-  top: 0; left: 0;
-  right: 0; bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background-color: #ccc;
   transition: 0.4s;
   border-radius: 20px;
@@ -121,9 +144,24 @@ body {
   transform: translateX(20px);
 }
 
-.email-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 8px 0;
+.link svg {
+  position: absolute;
+  margin-left: -20px;
+  margin-top: 2.5px;
+  width: 20px;
+  height: 20px;
+}
+
+.btn svg{
+  position: absolute;
+  margin-left: -60px;
+  margin-top: 1px;
+  width: 20px;
+  height: 13px;
+}
+
+.email-item .iconRename {
+  position: absolute;
+  width: 20px;
+  height: 13px;
 }

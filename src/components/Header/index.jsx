@@ -4,7 +4,7 @@ import Layout from '../../Layout';
 const Header = () => {
     return (
         <header className='header'>
-            <h1>Helloo</h1>
+            {/* <h1>Helloo</h1> */}
         </header>
     )
 }
