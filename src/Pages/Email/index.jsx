@@ -3,22 +3,10 @@ import SvgViewer from "../../SvgViewer";
 import './style.css';
 
 const Email = () => {
-    const [email, setEmail] = useState("");
     const [message, setMessage] = useState("");
     const [emailList, setEmailList] = useState([]);
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
 
-        if (!email.includes("@") || !email.includes(".")) {
-            setMessage("Некорректный email");
-            return;
-        }
-
-        setEmailList([...emailList, { email, active: true }]);
-        setMessage("Email добавлен в список!");
-        setEmail("");
-    };
 
     const toggleActive = (index) => {
         const updatedList = emailList.map((item, i) =>
@@ -27,48 +15,93 @@ const Email = () => {
         setEmailList(updatedList);
     };
 
-    return (
-        <div className="email-container">
+    const EmailHeader = () => {
+        const [email, setEmail] = useState("");
+        const handleSubmit = (e) => {
+            e.preventDefault();
+
+            if (!email.includes("@") || !email.includes(".")) {
+                return;
+            }
+
+            setEmailList([...emailList, { email, active: true }]);
+            setEmail("");
+        };
+        return (
             <div className="email-container-header">
                 <div className="user-container">
                     <span>Добавить пользователя</span>
-                
-                <a className="link"><SvgViewer id={'iconLink'}/>Скопировать</a>
+
+                    <a href='#' className="link"><SvgViewer id={'iconLink'} />Скопировать</a>
                 </div>
                 <form className="add-email" onSubmit={handleSubmit}>
-                    <input 
-                        type="text" 
+                    <input
+                        type="text"
                         placeholder="Invite others by name or by email"
-                        value={email} 
-                        onChange={(e) => setEmail(e.target.value)} 
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
                     />
-                        
-                        <button className="btn" type="submit" onSubmit={handleSubmit}><SvgViewer id={'iconPerson'}/>Пригласить</button>
+
+                    <button className="btn" type="submit" onSubmit={handleSubmit}><SvgViewer id={'iconPerson'} />Пригласить</button>
                 </form>
             </div>
+        );
+    };
+
+    const UserList = () => {
+        const [selectedItemId, setSelectedItemId] = useState(null);
+
+        const handleDeleteItem = () => {
+            return (
+                emailList.pop()
+            )
+        }
+
+        return (
             <div className="user-list-container">
                 <span>{message}</span>
-                <ul>
+                <ul className={"user-list-ul"} onMouseLeave={() => setSelectedItemId(null)}>
                     {emailList.map((item, index) => (
-                        <li key={index} className="email-item">
-                            <span>{item.email}</span>
-                            <SvgViewer className='iconBasket' id={'iconBasket'}/>
-                            <SvgViewer className='iconRename' id={'iconRename'}/>
-                            <label className="toggle-switch">
-                                <input 
-                                    type="checkbox" 
-                                    checked={item.active} 
-                                    onChange={() => toggleActive(index)} 
-                                />
-                                <span className="slider" />
-                            </label>
+                        <li key={index} className="email-item" onMouseEnter={() => setSelectedItemId(index)}>
+                            <div className="user-info-container">
+                                <span>{item.email}</span>
+                                <span>Role</span>
+
+                                <div className="toggle-container">
+                                    <label className="toggle-switch">
+                                        <input
+                                            type="checkbox"
+                                            checked={item.active}
+                                            onChange={() => toggleActive(index)}
+                                        />
+                                        <span className="slider" />
+                                    </label>
+                                </div>
+                            </div>
+                            <div className="user-menu-container">
+                                { selectedItemId === index && (
+                                    <SvgViewer className='iconBasket' id={'iconBasket'} action={handleDeleteItem} />
+                                ) }
+                                { selectedItemId === index && (
+                                    <SvgViewer className='iconRename' id={'iconRename'} />
+
+                                ) }
+                            </div>
                         </li>
                     ))}
                 </ul>
             </div>
+        );
+    };
+
+    return (
+        <div className="email-container">
+            <EmailHeader />
+            <UserList />
         </div>
-    );
+    )
+
+
 };
 
 export default Email;
- 
