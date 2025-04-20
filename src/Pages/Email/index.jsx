@@ -28,7 +28,7 @@ const Email = () => {
              <div className="user-container">
                 <span>Добавить пользователя</span>
                 <a className="link">Скопировать</a>
-                {/* <SvgViewer id={'iconRemove'} /> */}
+                <SvgViewer id={'iconRemove'} />
            </div>
             <div className="add-email" onSubmit={handleSubmit}>
                 <input 
@@ -37,7 +37,7 @@ const Email = () => {
                     value={email} 
                     onChange={(e) => setEmail(e.target.value)} 
                 />
-                    {/* <SvgViewer id={'iconAdd'} /> */}
+                    <SvgViewer id={'iconAdd'} />
                 <button type="submit" onClick={handleSubmit}>Пригласить</button>
             </div>
           </div>
