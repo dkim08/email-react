@@ -42,7 +42,13 @@ const Email = () => {
                         onChange={(e) => setEmail(e.target.value)}
                     />
 
-                    <button className="btn" type="submit" onSubmit={handleSubmit}><SvgViewer id={'iconPerson'} />Пригласить</button>
+                    <button className="btn" type="submit" onSubmit={handleSubmit}>
+                        <SvgViewer id={'iconPerson'} action={() => console.log("click")}/>
+                        <svg className="svg-use-container">
+                            <use href={`/assets/sprites.svg#iconPerson`}></use>
+                        </svg>  
+                        Пригласить
+                    </button>
                 </form>
             </div>
         );
