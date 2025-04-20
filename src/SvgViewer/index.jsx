@@ -1,4 +1,4 @@
-// import './style.css';
+import './styles.css';
 
 const SvgViewer = ({ id, action }) => {
     console.log("Show is", id)
@@ -7,7 +7,7 @@ const SvgViewer = ({ id, action }) => {
     }
     return (
         <div className="svg-viewer" onClick={handleAction}>
-            <svg className="svg-use-container">
+            <svg className={id === 'iconLink' ? 'filled' : "svg-use-container"}>
                 <use href={`/assets/sprites.svg#${id}`}></use>
             </svg>
         </div>

@@ -1,3 +1,8 @@
-/* .svg-viewer:hover {
-    fill:red;
-} */
+.filled use {
+    fill-opacity: 1;
+}
+
+.svg-use-container use {
+    fill-opacity: 0.4;
+}
+

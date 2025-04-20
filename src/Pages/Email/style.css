@@ -179,6 +179,10 @@ body {
   height: 13px;
 }
 
+.btn:hover .svg-use-container use {
+  fill-opacity: 1;
+}
+
 .email-item .iconRename {
   position: absolute;
   margin-left: 0px;
