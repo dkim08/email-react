@@ -83,10 +83,10 @@ const Email = () => {
                             </div>
                             <div className="user-menu-container">
                                 { selectedItemId === index && (
-                                    <SvgViewer className='iconBasket' id={'iconBasket'} action={handleDeleteItem} />
+                                    <SvgViewer id={'iconBasket'} action={handleDeleteItem} />
                                 ) }
                                 { selectedItemId === index && (
-                                    <SvgViewer className='iconRename' id={'iconRename'} />
+                                    <SvgViewer id={'iconRename'} />
 
                                 ) }
                             </div>
