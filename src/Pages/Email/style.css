@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  background: linear-gradient(to top, #1E1E1E, #2D2D2D);
+  background: linear-gradient(to top, #1E1E1E, #777777);
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -179,7 +179,7 @@ body {
   height: 13px;
 }
 
-.btn:hover .svg-use-container use {
+.btn .svg-use-container use {
   fill-opacity: 1;
 }
 

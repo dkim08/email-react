@@ -1,7 +1,7 @@
 import './styles.css';
 
 const SvgViewer = ({ id, action }) => {
-    console.log("Show is", id)
+    // console.log("Show is", id)
     const handleAction = () => {
         action();
     }
