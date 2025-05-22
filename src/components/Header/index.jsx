@@ -1,11 +1,19 @@
 import './style.css';
-import Layout from '../../Layout';
+import SvgViewer from '../SvgViewer';
 
 const Header = () => {
     return (
-        <header className='header'>
-            {/* <h1>Helloo</h1> */}
-        </header>
+        <div className='header-container'>
+            <header className='header'>
+                <div className="icon-container">
+                    <SvgViewer id={'iconOne'}/>
+                </div>
+                <div className="nav">
+
+                </div>
+            </header>
+        </div>
+
     )
 }
 

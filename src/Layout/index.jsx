@@ -3,7 +3,7 @@ import './style.css';
 
 const Layout = ( {children} ) => {
     return (
-        <div>
+        <div className='layout-container'>
             <Header />
             <div className='default-layout-children'>
                 {children}
