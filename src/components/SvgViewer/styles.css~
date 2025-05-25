@@ -14,8 +14,8 @@
 
 .svg-use-container{
     /*width: 100%;*/
-    /*max-width: 41px;*/
-    /*max-height: 43px;*/
+    max-width: 41px;
+    max-height: 43px;
     display: flex;
     align-items: center;
     justify-content: center;

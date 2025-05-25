@@ -5,12 +5,18 @@ const Header = () => {
     return (
         <div className='header-container'>
             <header className='header'>
-                <div className="icon-container">
+                <div className="logo-container">
                     <SvgViewer id={'iconOne'} action={() => console.log('Главная страница')}/>
                 </div>
                 <div className="nav">
-                    <button className='nav-btn' ><SvgViewer id={'iconCube'} /></button>
-                    <button className='nav-btn'><SvgViewer id={'iconCircle'} /></button>
+                    <div className="nav-button-container">
+                        <SvgViewer id={'iconCube'} />
+                    </div>
+                    <div className="nav-button-container">
+                        <SvgViewer id={'iconCircle'} />
+                    </div>
+                    {/*<button className='nav-btn' ><SvgViewer id={'iconCube'} /></button>*/}
+                    {/*<button className='nav-btn'><SvgViewer id={'iconCircle'} /></button>*/}
                 </div>
             </header>
         </div>
