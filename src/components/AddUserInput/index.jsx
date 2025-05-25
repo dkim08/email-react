@@ -31,7 +31,7 @@ const AddUserInput = ({ emailList, setEmailList }) => {
                 />
                 <button className="btn" type="submit" onSubmit={handleSubmit}>
                     <SvgViewer id={'iconPerson'} action={() => console.log("click")} />
-                    Пригласить
+                    <span className="btn-text">Пригласить</span>
                 </button>
             </form>
         </div>
