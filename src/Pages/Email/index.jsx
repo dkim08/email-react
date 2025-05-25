@@ -8,10 +8,13 @@ const Email = () => {
     const [emailList, setEmailList] = useState([]);
 
     return (
-        <div className="email-container">
-            <AddUserInput emailList={emailList} setEmailList={setEmailList} />
-            <UserList emailList={emailList} setEmailList={setEmailList} />
+        <div className="wrapper">
+             <div className="email-container">
+                <AddUserInput emailList={emailList} setEmailList={setEmailList} />
+                <UserList emailList={emailList} setEmailList={setEmailList} />
+            </div>
         </div>
+       
     )
 };
 

@@ -6,3 +6,12 @@
     fill-opacity: 0.4;
 }
 
+.svg-viewer {
+    width: 100%;
+    box-sizing: border-box;
+
+}
+
+.svg-use-container{
+    width: 100%;
+}

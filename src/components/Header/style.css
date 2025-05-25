@@ -1,11 +1,63 @@
 .header-container {
-    background: linear-gradient(to top, #222222,#424c41 );
-    margin-left: 20px;
-    border-radius: 70px;
-
+    position: fixed;
+    padding-left: 20px;
+    height: 100vh;
 }
 
 .header {
+    background: linear-gradient(to top, rgb(33, 33, 33), rgb(66, 76, 65) );
+    border-radius: 70px;
     width: 60px;
-    height: 100vh;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.icon-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.icon-container > .svg-viewer > .svg-use-container use {
+    fill-opacity: 1 !important;
+}
+
+.icon-container > .svg-viewer > .svg-use-container {
+    padding-left: 10px;
+    padding-top: 20px;
+    width: 50px;
+    height: 50px;
+}
+
+.nav {
+    padding: 0px 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 100px;
+    background-color: #ffffff31;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.svg-viewer > .svg-use-container {
+    /* width: 30px; */
+    height: 30px;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
