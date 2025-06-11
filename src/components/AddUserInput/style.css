@@ -60,3 +60,13 @@
     display: flex;
     align-items: center;
 }
+
+.btn img {
+    opacity: 0.4;
+    transition: all 0.3s;
+}
+
+.btn img:hover {
+    opacity: 1;
+}
+

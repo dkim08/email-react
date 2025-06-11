@@ -20,24 +20,10 @@
 .logo-container {
     display: flex;
     justify-content: center;
-    /*width: 100%;*/
 }
 
-/*.icon-container > .svg-viewer > .svg-use-container use {*/
-/*    fill-opacity: 1 !important;*/
-/*}*/
-
-/*.icon-container > .svg-viewer > .svg-use-container {*/
-    /*padding-left: 10px;*/
-    /*padding-top: 20px;*/
-    /*width: 50px;*/
-    /*height: 50px;*/
-/*}*/
-
 .nav {
-    /*padding: 0px 8px;*/
     display: flex;
-    background-color: rgba(255, 0, 0, 0.47);
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -55,9 +41,9 @@
     background-color: #ffffff31;
     border: none;
     padding: 10px;
-    /*display: flex;*/
-    /*align-items: center;*/
-    /*justify-content: center;*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .nav-button-container button {
@@ -66,15 +52,5 @@
 
 .nav-button-container:hover {
     cursor: pointer;
-    background-color: greenyellow;
+    background-color: rgb(145, 145, 145);
 }
-
-/* .svg-viewer > .svg-use-container {
-    width: 30px;
-    height: 30px;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-} */

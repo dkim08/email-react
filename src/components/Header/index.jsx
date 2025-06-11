@@ -1,27 +1,24 @@
 import './style.css';
-import SvgViewer from '../SvgViewer';
+import SvgSelector from '../SvgSelector';
 
 const Header = () => {
     return (
         <div className='header-container'>
             <header className='header'>
                 <div className="logo-container">
-                    <SvgViewer id={'iconOne'} action={() => console.log('Главная страница')}/>
+                    <SvgSelector name="iconOne" action={() => console.log('Главная страница')} />
                 </div>
                 <div className="nav">
                     <div className="nav-button-container">
-                        <SvgViewer id={'iconCube'} />
+                        <SvgSelector name="iconCube" action={() => console.log('Email Page')}/>
                     </div>
                     <div className="nav-button-container">
-                        <SvgViewer id={'iconCircle'} />
+                        <SvgSelector name="iconCircle" action={() => console.log('Links Page')}/>
                     </div>
-                    {/*<button className='nav-btn' ><SvgViewer id={'iconCube'} /></button>*/}
-                    {/*<button className='nav-btn'><SvgViewer id={'iconCircle'} /></button>*/}
                 </div>
             </header>
         </div>
-
-    )
-}
+    );
+};
 
 export default Header;

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import SvgViewer from "../SvgViewer";
+import SvgSelector from "../SvgSelector";
 import './style.css';
 
 const AddUserInput = ({ emailList, setEmailList }) => {
@@ -20,7 +20,7 @@ const AddUserInput = ({ emailList, setEmailList }) => {
         <div className="email-container-header">
             <div className="user-container">
                 <span>Добавить пользователя</span>
-                <a href='#' className="link"><SvgViewer id={'iconLink'} />Скопировать</a>
+                <a href='#' className="link"><SvgSelector name={'iconLink'} />Скопировать</a>
             </div>
             <form className="add-email" onSubmit={handleSubmit}>
                 <input
@@ -30,7 +30,7 @@ const AddUserInput = ({ emailList, setEmailList }) => {
                     onChange={(e) => setEmail(e.target.value)}
                 />
                 <button className="btn" type="submit" onSubmit={handleSubmit}>
-                    <SvgViewer id={'iconPerson'} action={() => console.log("click")} />
+                    <SvgSelector name={'iconPerson'} action={() => console.log("click")} />
                     <span className="btn-text">Пригласить</span>
                 </button>
             </form>

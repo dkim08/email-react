@@ -1,6 +1,7 @@
 import { useState } from "react";
-import SvgViewer from "../SvgViewer";
+import SvgSelector from "../SvgSelector";
 import ActiveToggle from "../ActiveToggle";
+
 import './style.css';
 
 
@@ -32,8 +33,8 @@ const UserList = ({ emailList, setEmailList }) => {
                             <div className="user-menu-container">
                                 {selectedItemId === index && (
                                     <>
-                                        <SvgViewer id={'iconBasket'} action={() => handleDeleteItem(index)} />
-                                        <SvgViewer id={'iconRename'} action={() => console.log('Нажата кнопка rename')} />
+                                        <SvgSelector name={'iconBasket'} action={() => handleDeleteItem(index)} />
+                                        <SvgSelector name={'iconRename'} action={() => console.log('Нажата кнопка rename')} />
                                     </>
                                 )}
                             </div>
