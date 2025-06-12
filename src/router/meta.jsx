@@ -1,18 +1,6 @@
 import LinkGenerator from "../Pages/Links";
 import Email from "../Pages/Email";
-
-export const paths = {
-    EMAIL: {
-        id: "Email",
-        path: "/",
-        label: "Email"
-    },
-    LINK_GENERATOR: {
-        id: "Links",
-        path: "/links",
-        label: "Link Generator"
-    },
-};
+import { paths } from "../utils/constants";
 
 const routes = [
     {
