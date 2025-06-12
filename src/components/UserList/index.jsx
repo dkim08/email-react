@@ -17,7 +17,6 @@ const UserList = ({ emailList, setEmailList }) => {
 
     return (
         <div className="user-list-container">
-            {/* <span>{message}</span> */}
             {emailList.length === 0 ? (
                 <div className="no-users">Не добавлено ни одного пользователя</div>
             ) : (

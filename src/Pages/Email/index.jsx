@@ -5,7 +5,6 @@ import Layout from "../../Layout";
 import './style.css';
 
 const Email = () => {
-    // const [message] = useState("");
     const [emailList, setEmailList] = useState([]);
 
     return (
