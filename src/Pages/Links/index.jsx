@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Layout from "../../Layout";
 
 const LinkGenerator = () => {
     const [link, setLink] = useState("");
@@ -25,14 +26,16 @@ const LinkGenerator = () => {
     };
 
     return (
-        <div>
-            <button onClick={generateLink}>Generate Link</button>
-            <br /><br />
+        <Layout>
             <div>
-                <span>{link}</span>
-                <button onClick={copyToClipboard}>Copy</button>
+                <button onClick={generateLink}>Generate Link</button>
+                <br /><br />
+                <div>
+                    <span>{link}</span>
+                    <button onClick={copyToClipboard}>Copy</button>
+                </div>
             </div>
-        </div>
+        </Layout>
     );
 };
 
