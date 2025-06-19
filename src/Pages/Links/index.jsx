@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Layout from "../../Layout";
+import "./style.css"; // подключаем CSS
 
 const LinkGenerator = () => {
     const [link, setLink] = useState("");
@@ -16,7 +17,6 @@ const LinkGenerator = () => {
     const generateLink = () => {
         const randomString = generateRandomString(6);
         const newLink = `https://example.com/${randomString}`;
-        console.log(newLink); 
         setLink(newLink);
     };
 
@@ -27,14 +27,25 @@ const LinkGenerator = () => {
 
     return (
         <Layout>
-            <div>
-                <button onClick={generateLink}>Generate Link</button>
-                <br /><br />
-                <div>
-                    <span>{link}</span>
-                    <button onClick={copyToClipboard}>Copy</button>
+            <div className="link-generator-container">
+                <div className="link-generator-content">
+                    <p className="title">Генератор ссылок</p>
+                    <p className="subtitle">Чтобы сгенерировать ссылку, нажмите на кнопку</p>
+                    <button className="generate-btn" onClick={generateLink}>
+                        Сгенерировать
+                    </button>
+
+                    {link && (
+                        <div className="link-display">
+                            <span className="link-text">{link}</span>
+                            <button className="copy-btn" onClick={copyToClipboard}>
+                                Copy
+                            </button>
+                        </div>
+                    )}
                 </div>
             </div>
+
         </Layout>
     );
 };
