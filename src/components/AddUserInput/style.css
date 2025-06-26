@@ -30,6 +30,8 @@
     background-color: hsla(0, 0%, 0%, 0.3);
     color: white;
     box-sizing: border-box;
+    outline: none;
+
 }
 
 .add-email button {

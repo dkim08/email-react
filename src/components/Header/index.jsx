@@ -19,8 +19,9 @@ const Header = () => {
     return (
         <div className='header-container'>
             <header className='header'>
-                <div className="logo-container">
-                    <SvgSelector name="iconOne" action={() => navigate('/')} />
+                
+                <div className='logo-container' onClick={() => routeHandle('/')}>
+                    <SvgSelector name={"iconOne"} />
                 </div>
 
                 <div className="nav">
@@ -37,8 +38,8 @@ const Header = () => {
                         <SvgSelector name="iconCircle" />
                     </div>
                 </div>
-            </header>
-        </div>
+            </header >
+        </div >
     );
 };
 
