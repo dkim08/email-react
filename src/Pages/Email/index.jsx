@@ -6,6 +6,7 @@ import './style.css';
 
 const Email = () => {
     const [emailList, setEmailList] = useState([]);
+    
 
     return (
         <Layout>

@@ -1,6 +1,6 @@
 import './style.css';
 import SvgSelector from '../SvgSelector';
-import {useEffect, useState} from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from "react-router";
 import { paths } from '../../utils/constants';
 import { useNavigate, useLocation } from "react-router";
@@ -28,13 +28,13 @@ const Header = () => {
                     className={`nav-button-container ${location.pathname === '/' ? 'active' : ''}`}
                     onClick={() => routeHandle('/')}
                 >
-                    <SvgSelector name="iconCube"/>
+                    <SvgSelector name="iconCube" />
                 </div>
                 <div
                     className={`nav-button-container ${location.pathname === '/links' ? 'active' : ''}`}
                     onClick={() => routeHandle('/links')}
                 >
-                    <SvgSelector name="iconCircle"/>
+                    <SvgSelector name="iconCircle" />
                 </div>
             </div>
         )
@@ -47,7 +47,9 @@ const Header = () => {
                     className={`nav-button-container`}
                     onClick={expandMenuHandle}
                 >
-                    {isMobileMenuExpanded ? <SvgSelector name="iconPerson"/> : <SvgSelector name="iconLink"/>}
+                    <span className='mobile-arrow'>
+                        {isMobileMenuExpanded ? '̭' : 'ˇ'}
+                    </span>
                 </div>
 
                 {isMobileMenuExpanded && (
@@ -56,13 +58,13 @@ const Header = () => {
                             className={`nav-button-container ${location.pathname === '/' ? 'active' : ''}`}
                             onClick={() => routeHandle('/')}
                         >
-                            <SvgSelector name="iconCube"/>
+                            <SvgSelector name="iconCube" />
                         </div>
                         <div
                             className={`nav-button-container ${location.pathname === '/links' ? 'active' : ''}`}
                             onClick={() => routeHandle('/links')}
                         >
-                            <SvgSelector name="iconCircle"/>
+                            <SvgSelector name="iconCircle" />
                         </div>
                     </div>
                 )}
@@ -87,10 +89,10 @@ const Header = () => {
         <div className={'header-container'}>
             <header className={`${isMobileSize ? 'mobile-header' : 'header'}`}>
                 <div className="logo-container">
-                    <SvgSelector name="iconOne" action={() => navigate('/')}/>
+                    <SvgSelector name="iconOne" action={() => navigate('/')} />
                 </div>
-                {!isMobileSize && <DesktopNavigation/>}
-                {isMobileSize && <MobileNavigation/>}
+                {!isMobileSize && <DesktopNavigation />}
+                {isMobileSize && <MobileNavigation />}
             </header>
         </div>
     );

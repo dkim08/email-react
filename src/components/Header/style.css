@@ -20,6 +20,7 @@
 
 .mobile-header {
     padding-top: 20px;
+    padding-bottom: 10px;
     background: linear-gradient(to top, rgb(33, 33, 33), rgb(66, 76, 65) );
     border-radius: 70px;
     width: 60px;
@@ -69,4 +70,11 @@
 .nav-button-container.active {
     cursor: pointer;
     background-color: rgb(145, 145, 145);
+}
+
+.mobile-arrow {
+    /* margin: auto; */
+    font-size: 50px; 
+    color: #fff;
+
 }

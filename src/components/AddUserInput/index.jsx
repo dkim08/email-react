@@ -25,7 +25,7 @@ const AddUserInput = ({ emailList, setEmailList }) => {
             <form className="add-email" onSubmit={handleSubmit}>
                 <input
                     type="text"
-                    placeholder="Invite others by name or by email"
+                    placeholder=""
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                 />
