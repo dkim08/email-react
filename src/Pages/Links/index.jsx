@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Layout from "../../Layout";
-import "./style.css"; // подключаем CSS
+import "./style.css"; 
 
 const LinkGenerator = () => {
     const [link, setLink] = useState("");

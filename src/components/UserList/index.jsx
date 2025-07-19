@@ -24,7 +24,7 @@ const UserList = ({ emailList, setEmailList }) => {
                     {emailList.map((item, index) => (
                         <li key={index} className="email-item" onMouseEnter={() => setSelectedItemId(index)}>
                             <div className="user-info-container">
-                                <span>{item.email}</span>
+                                <span className="email-text">{item.email}</span>
                                 <span>Role</span>
                                 <ActiveToggle index={index} emailList={emailList} setEmailList={setEmailList} item={item} />
                             </div>

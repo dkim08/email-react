@@ -31,5 +31,13 @@
   .email-container {
     max-width: 90%;
     padding: 20px;
+    
   }
+}
+
+@media (max-width: 760px) {
+  .email-container {
+    min-height: 400px;
+  }
+  
 }
