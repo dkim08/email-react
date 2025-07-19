@@ -43,7 +43,7 @@ const UserList = ({ emailList, setEmailList }) => {
                             </div>
 
                             <div className="user-menu-container">
-                                    {(selectedItemId === index || screenWidth < 821) && (
+                                    {(selectedItemId === index && screenWidth > 821) && (
                                     <>
                                         <SvgSelector name={'iconBasket'} action={() => handleDeleteItem(index)} />
                                         <SvgSelector name={'iconRename'} action={() => console.log('Нажата кнопка rename')} />

@@ -69,7 +69,7 @@ const Header = () => {
 
                 {isMobileSize && <ExpandButton/>}
 
-                <div className='nav'>
+                <div className={`${isMobileSize ? 'mobile-nav' : 'nav'}`}>
                     {menu.map((menuItem) => (
                         <div
                             className={`nav-button-container ${location.pathname === menuItem.path ? 'active' : ''}`}

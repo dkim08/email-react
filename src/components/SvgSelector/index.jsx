@@ -8,6 +8,8 @@ import iconPerson from "../../assests/iconPerson.svg";
 import iconRemove from "../../assests/iconRemove.svg";
 import iconRename from "../../assests/iconRename.svg";
 import iconArrow from "../../assests/iconArrow.png"
+import arrowUp from "../../assests/arrowUp.svg"
+import arrowDown from "../../assests/arrowDown.svg"
 
 
 const SvgSelector = ({name, action}) => {
@@ -48,6 +50,12 @@ const SvgSelector = ({name, action}) => {
             break;
         case "iconRename":
             iconAsset = iconRename;
+            break;
+        case "arrowUp":
+            iconAsset = arrowUp;
+            break;
+        case "arrowDown":
+            iconAsset = arrowDown;
             break;
         default:
             iconAsset = (<></>)
