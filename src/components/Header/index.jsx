@@ -5,6 +5,17 @@ import { Link } from "react-router";
 import { paths } from '../../utils/constants';
 import { useNavigate, useLocation } from "react-router";
 
+const menu = [
+    {
+        path: "/",
+        icon: "iconCube",
+    },
+    {
+        path: "/links",
+        icon: "iconCircle",
+    },
+];
+
 const Header = () => {
     const navigate = useNavigate();
     const location = useLocation();
@@ -17,59 +28,20 @@ const Header = () => {
         navigate(route);
     };
 
-    const expandMenuHandle = () => {
-        setIsMobileMenuExpanded(!isMobileMenuExpanded);
-    }
+    const ExpandButton = () => {
+        const handleExpand = () => {
+            setIsMobileMenuExpanded(!isMobileMenuExpanded);
+        }
 
-    const DesktopNavigation = () => {
         return (
-            <div className="nav">
-                <div
-                    className={`nav-button-container ${location.pathname === '/' ? 'active' : ''}`}
-                    onClick={() => routeHandle('/')}
-                >
-                    <SvgSelector name="iconCube" />
-                </div>
-                <div
-                    className={`nav-button-container ${location.pathname === '/links' ? 'active' : ''}`}
-                    onClick={() => routeHandle('/links')}
-                >
-                    <SvgSelector name="iconCircle" />
-                </div>
+            <div
+                id={`expand-button-${isMobileMenuExpanded ? 'expanded' : 'close'}`}
+                className={`nav-button-container`}
+                onClick={handleExpand}
+            >
+                <SvgSelector name="iconArrow" />
             </div>
-        )
-    }
-
-    const MobileNavigation = () => {
-        return (
-            <div className="mobile-nav">
-                <div
-                    className={`nav-button-container`}
-                    onClick={expandMenuHandle}
-                >
-                    <span className='mobile-arrow'>
-                        {isMobileMenuExpanded ? '̭' : 'ˇ'}
-                    </span>
-                </div>
-
-                {isMobileMenuExpanded && (
-                    <div className={`mobile-nav-button-container`}>
-                        <div
-                            className={`nav-button-container ${location.pathname === '/' ? 'active' : ''}`}
-                            onClick={() => routeHandle('/')}
-                        >
-                            <SvgSelector name="iconCube" />
-                        </div>
-                        <div
-                            className={`nav-button-container ${location.pathname === '/links' ? 'active' : ''}`}
-                            onClick={() => routeHandle('/links')}
-                        >
-                            <SvgSelector name="iconCircle" />
-                        </div>
-                    </div>
-                )}
-            </div>
-        )
+        );
     }
 
     useEffect(() => {
@@ -87,12 +59,26 @@ const Header = () => {
 
     return (
         <div className={'header-container'}>
-            <header className={`${isMobileSize ? 'mobile-header' : 'header'}`}>
+            <header
+                className={`${isMobileSize ? 'mobile-header' : 'header'}` +
+                    ` ${isMobileMenuExpanded ? 'expanded' : ''}`}
+            >
                 <div className="logo-container">
                     <SvgSelector name="iconOne" action={() => navigate('/')} />
                 </div>
-                {!isMobileSize && <DesktopNavigation />}
-                {isMobileSize && <MobileNavigation />}
+
+                {isMobileSize && <ExpandButton />}
+
+                <div className='nav'>
+                    {menu.map((menuItem) => (
+                        <div
+                            className={`nav-button-container ${location.pathname === menuItem.path ? 'active' : ''}`}
+                            onClick={() => routeHandle(menuItem.path)}
+                        >
+                            <SvgSelector name={menuItem.icon} />
+                        </div>
+                    ))}
+                </div>
             </header>
         </div>
     );

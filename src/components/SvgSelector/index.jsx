@@ -7,7 +7,7 @@ import iconOne from "../../assests/iconOne.svg";
 import iconPerson from "../../assests/iconPerson.svg";
 import iconRemove from "../../assests/iconRemove.svg";
 import iconRename from "../../assests/iconRename.svg";
-import iconArrow from "../../assests/iconArrow.png"
+import iconArrow from "../../assests/arrowUp.svg"
 
 
 const SvgSelector = ({name, action}) => {
