@@ -7,7 +7,7 @@ import iconOne from "../../assests/iconOne.svg";
 import iconPerson from "../../assests/iconPerson.svg";
 import iconRemove from "../../assests/iconRemove.svg";
 import iconRename from "../../assests/iconRename.svg";
-import iconArrow from "../../assests/arrowUp.svg"
+import arrowUp from "../../assests/arrowUp.svg"
 
 
 const SvgSelector = ({name, action}) => {
@@ -20,8 +20,9 @@ const SvgSelector = ({name, action}) => {
     let iconAsset;
 
     switch (name) {
-        case "iconArrow":
-            iconAsset = iconArrow;
+        case "arrowUp":
+            iconAsset = arrowUp;
+            break;
         case "iconAdd":
             iconAsset = iconAdd;
             break;

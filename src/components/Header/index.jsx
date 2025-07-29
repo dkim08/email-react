@@ -34,12 +34,13 @@ const Header = () => {
         }
 
         return (
-            <div
-                id={`expand-button-${isMobileMenuExpanded ? 'expanded' : 'close'}`}
-                className={`nav-button-container`}
-                onClick={handleExpand}
-            >
-                <SvgSelector name="iconArrow" />
+            <div className='expand-button'>
+                <div
+                    className={`nav-button-container ${isMobileMenuExpanded ? 'expanded' : 'close'}`}
+                    onClick={handleExpand}
+                >
+                <SvgSelector name="arrowUp" />
+            </div>
             </div>
         );
     }
